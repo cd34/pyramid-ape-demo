@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Ape/Pyramid Demo</title>
+<link rel="stylesheet" href="bootstrap.min.css"/>
+<script type="text/javaScript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javaScript" src="ape.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="alert-message block-message error">
+<h2>Pyramid and Ape Demo</h2>
+</div>
+<h1>Coke Choices</h1>
+<p>
+The choice between Diet Coke or Coke Zero is made using Ape's client 
+methods. The choice between Cherry Coke and Black Cherry Vanilla Coke 
+is made through a json post to a server on a different domain which 
+then does a urllib2.urlopen() to the Ape Server to send the data through.
+</p>
+<p>
+Using the Ape Javascript client means that the webapp server never needs
+to see the request and Ape handles all client communications. Using the 
+JQuery post method simulates having a server-side broadcast that would
+be made and broadcast to a lot of listeners.
+</p>
+<div class="row">
+<div class="span4">
+<h4>Diet Coke</h4>
+or<br/>
+<h4>Coke Zero</h4>
+<img id="diet" src="dietcoke.png" width="75" height="139" alt="Diet Coke"/><br/>
+<span class="alert-message success" id="status-diet">Diet Coke</span>
+</div>
+<div class="span2">
+<h2>Select</h2>
+<div id="l-dietcoke" class="label success">Diet Coke</div>
+<br/>
+<div id="l-cokezero" class="label warning">Coke Zero</div>
+<p>
+This uses actions built on the page and JavaScript through Ape
+to communicate the change.
+</p>
+</div>
+<div class="span4 offset2">
+<h4>Cherry Coke</h4>
+or<br/>
+<h4>Black Cherry Vanilla Coke</h4>
+<img id="cherry" src="cherrycoke.png" width="75" height="139" alt="Cherry Coke"/><br/>
+<span class="alert-message success" id="status-cherry">Cherry Coke</span>
+</div>
+<div class="span4">
+<h2>Select</h2>
+<div>
+<input type="radio" name="cherry" value="cherrycoke" checked="checked"/>Cherry Coke<br/>
+<input type="radio" name="cherry" value="blackcherryvanillacoke"/>Black Cherry Vanilla Coke
+</div>
+<br/>
+<p>
+This uses Jquery Form Submission and a controller through Pyramid
+using urllib2 to post a json string to Ape.
+</p>
+</div>
+</div>
+<br/>
+<div class="alert-message block-message info">
+<h3>Software Used</h3>
+</div>
+<ul class="unstyled">
+<li><a href="http://pylonsproject.org/">Pyramid</a></li>
+<li><a href="http://www.ape-project.org/">Ape</a></li>
+<li><a href="http://cd34.com/blog/framework/ajax-push-engine-pyramid-and-a-quick-demo-application/">Blog Post regarding this page</a></li>
+<li><a href="http://code.google.com/p/pyramid-ape-demo/">Full code for the demo</a></li>
+</ul>
+</div>
+<script type="text/javaScript" src="coke.js"></script>
+</body>
+</html>
